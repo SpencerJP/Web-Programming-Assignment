@@ -544,7 +544,7 @@ function registerPlayer( type, object ) {
 			clearInterval( jwinterval );
 
 			//oh somewhere online haha
-			jwplayer.key="ZgjVDLYYp9SF59TDwdD3w+U3On19OWR3o2ewkmKOTiY=";
+			jwplayer.key="cnDAHBxmXEAXOEaDeJPL3SGq";
 
 			if(id.substring(0,3)=="jw_") {
 				var data = eval(asp.wrap(id.substring(3,id.length)));
