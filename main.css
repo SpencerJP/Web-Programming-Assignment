@@ -1,0 +1,182 @@
+body{ 
+    background:url(dolby2.jpg) top right; 
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+
+}
+
+.flex-container summary {
+    display: block;
+}
+
+nav ul{
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-align: center;
+    background: rgba(0,0,0,0.4);
+
+}
+
+
+
+nav li{
+	display: inline;
+    display: inline-block;
+
+    
+}
+
+nav li a{
+	font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 10px 50px;
+    text-decoration: none;
+    opacity: none;
+}
+
+nav li a:hover {
+    background-color: #00ffff;
+    color: black;
+}
+
+header img{
+    height: 125;
+    width: 300;
+}
+
+header h1{
+    color: white;
+    font-size: 60px;
+    font-family: Avenir;
+
+}
+.content{
+    background: rgba(0,0,0,0.3);
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.content p{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+}   
+
+.content h2{
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial;
+}  
+
+.content img{
+    display: block;
+    margin: auto;
+
+}
+
+.content h1{
+    color: white;
+    text-align: center;
+}
+
+footer{
+    
+    background: rgba(0,0,0,0.3);
+   
+}
+
+footer p{
+    color: white;
+    text-align: left;
+    font-size: 18px;
+}
+
+
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 15px;
+}
+
+input[type=email], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 1px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 15px;
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-container p{
+    font-size: 20px;
+}
+
+.flex-item {
+    width: 425px;
+    height: auto;
+    margin: 20px;
+
+}
+
+.flex-item img{
+    width: 450px;
+    height:225px;
+}
+
+table, th ,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-color: white;
+
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    color:white;    
+}
+
