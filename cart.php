@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>About</title>
+	<title>Contact</title>
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -12,6 +12,7 @@
 			session_start();
 		?>
 	</header>
+
 	<nav>
 		<ul>
 			<li><a href="index.php">Home</a></li>
@@ -22,14 +23,28 @@
 
 	</nav>
 
-	<div class="content">
+	<div class = "content">
+		
+		<form method='post' action='checkout.php' id="cartform">
 
-		<h2>About Silverado Cinema's</h2>
-	
+    		<table>
+    			<tr>
+	    			<td>
+	    				10 CloverField Lane <a href="cart.php?type=remove;name=cloverfield">Remove from Cart</a>
+	    			</td>
+    			</tr>
+    			<tr>
+	    			<td>
+	    				Batman vs Superman <a href="cart.php?type=remove;name=bvs">Remove from Cart</a>
+	    			</td>
+    			</tr>
+    		</table>
 
-		<p>Silverado Cinema's was established in 1994, orginally a thetre for performaning arts. After years of innovation we have shifted into a Movie market displayed current block busters to our clients. Here at Silverado Cinema's we have always wanted the best for our customers and have proven that over the years by meeting your feedback</p>
 
-		<p>Our newly established Cinemas now incorporate Dolby sound, aswell has 3D projection and more comfortable seats. This change was inspired by our customers wanting the best out of our services, and as a company who listens, we decieded to address your thoughts and made these changes.</p>
+			<button type="submit" form="cartform" value="Submit">Checkout</button>
+
+		</form>
+		
 	</div>
 
 	<footer>
@@ -38,8 +53,9 @@
 	 	<p>S3542846 & S3539519</p>
 	 	<p>Copyight 2016</p>
 
+
 	 	<?php include_once("/home/eh1/e54061/public_html/wp/debug.php") ?>
 	</footer>
-	
+
 </body>
 </html>

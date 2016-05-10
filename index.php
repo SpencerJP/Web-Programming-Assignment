@@ -12,7 +12,9 @@
 		<!-- Original image below sourced for educational purposes: http://www.moustachemagazine.com/wp-content/uploads/2016/03/CLOVERFIELD-LANE.jpg-->
 		<!-- Original image below sourced for educational purposes: http://blogs-images.forbes.com/scottmendelson/files/2016/03/greek.png -->
 		<h1><center>Silverado Cinema's</center></h1>
-	
+		<?php
+			session_start();
+		?>
 	</header>
 	<nav>
 		<ul>
@@ -56,10 +58,11 @@
 	</div>
 	
 	<footer>
-		<p>This website was created for the use of RMIT assignment 1, Web Programming.</p>
-	 	<p>Dominic Alvaro</p>
-	 	<p>S3542846</p>
-	 	<p>CopyRight 2016</p>
+	  	<p>This website was created for the use of RMIT assignment 2, Web Programming.</p>
+	 	<p>Dominic Alvaro & Spencer Porteous</p>
+	 	<p>S3542846 & S3539519</p>
+	 	<p>Copyight 2016</p>
+	 	<?php include_once("/home/eh1/e54061/public_html/wp/debug.php") ?>
 	</footer>
 
 
