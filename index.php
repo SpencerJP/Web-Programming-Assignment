@@ -16,16 +16,10 @@
 			session_start();
 		?>
 	</header>
-	<nav>
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="booking.php">Booking</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact</a></li>
-		</ul>
-
-	</nav>
-	
+	<?php
+			require_once("nav-view.php");
+			echo "${nav}";
+	?>
 	
 	<div class = "content">
 		<p>Welcome to the re-opening of Silverado Cinema's with a whole new make over taking your visual and listening experiance to a whole new level. Indcluding features like the all new Dolby Sound System, 3D projection, and comfortbale seats for enhanced viewing perfomance </p>
@@ -58,11 +52,13 @@
 	</div>
 	
 	<footer>
-	  	<p>This website was created for the use of RMIT assignment 2, Web Programming.</p>
-	 	<p>Dominic Alvaro & Spencer Porteous</p>
-	 	<p>S3542846 & S3539519</p>
-	 	<p>Copyight 2016</p>
-	 	<?php include_once("/home/eh1/e54061/public_html/wp/debug.php") ?>
+	  	<?php
+
+			require_once("footer-view.php");
+			echo "${footer}";
+
+	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
+	 	?>
 	</footer>
 
 

@@ -10,7 +10,8 @@
 	<header>
 		<h1><center>Silverado Cinema's</center></h1>
 		<?php
-			session_start();
+			require_once("nav-view.php");
+			echo "${nav}";
 		?>
 	</header>
 	
@@ -216,12 +217,13 @@
 	</div>
 
 	<footer>
-	  	<p>This website was created for the use of RMIT assignment 2, Web Programming.</p>
-	 	<p>Dominic Alvaro & Spencer Porteous</p>
-	 	<p>S3542846 & S3539519</p>
-	 	<p>Copyight 2016</p>
+	  	<?php
 
-	 	<?php include_once("/home/eh1/e54061/public_html/wp/debug.php") ?>
+			require_once("footer-view.php");
+			echo "${footer}";
+
+	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
+	 	?>
 	</footer>
 
 </body>
