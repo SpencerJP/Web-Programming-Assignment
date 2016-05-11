@@ -8,21 +8,12 @@
 <body>
 	<header>
 		<h1><center>Silverado Cinema's</center></h1>
-		<?php
-			require_once("nav-view.php");
-			echo "${nav}";
-		?>
 	</header>
 
-	<nav>
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="booking.php">Booking</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact</a></li>
-		</ul>
-
-	</nav>
+	<?php
+			require_once("nav-view.php");
+			echo "${nav}";
+	?>
 
 	<div class = "content">
 		

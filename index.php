@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<title>Assignment 1</title>
 	<link rel="stylesheet" href="main.css">
-	
+	<?php
+	require("init.php");
+	?>
 </head>
 <body>
 	<header>
