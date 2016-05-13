@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +8,21 @@
 <body>
 	<header>
 		<h1><center>Silverado Cinema's</center></h1>
-		
+	
 	</header>
 	
-	<?php
-			require_once("nav-view.php");
-			echo "${nav}";
-	?>
+	<nav>
+		<ul>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="booking.php">Booking</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="contact.php">Contact</a></li>
+			<li><a href="cart.php">Cart</a></li>
+			<li><a href="checkout.php">Check Out</a></li>
+		</ul>
+
+	</nav>
+
 	<div class= "content">
 		<h2>Feel free to browse our current movies that are showing and book online</h2>
 
@@ -86,7 +93,7 @@
 			<P>Movie</P>
 			<select name="movie">
 		        <option value="batman">Superman VS Batman</option>
-		        <option value="Movie">10 Cloverfield Lane</option>
+		        <option value="Movie">GOAL</option>
 		        <option value="Movie">Wedding Crashes</option>
 		    </select>
 		    <br>
@@ -208,13 +215,10 @@
 	</div>
 
 	<footer>
-	  	<?php
-
-			require_once("footer-view.php");
-			echo "${footer}";
-
-	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
-	 	?>
+	 	<p>This website was created for the use of RMIT assignment 1, Web Programming.</p>
+	 	<p>Dominic Alvaro</p>
+	 	<p>S3542846</p>
+	 	<p>CopyRight 2016</p>
 	</footer>
 
 </body>

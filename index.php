@@ -4,9 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Assignment 1</title>
 	<link rel="stylesheet" href="main.css">
-	<?php
-	require("init.php");
-	?>
+	
 </head>
 <body>
 	<header>
@@ -14,14 +12,21 @@
 		<!-- Original image below sourced for educational purposes: http://www.moustachemagazine.com/wp-content/uploads/2016/03/CLOVERFIELD-LANE.jpg-->
 		<!-- Original image below sourced for educational purposes: http://blogs-images.forbes.com/scottmendelson/files/2016/03/greek.png -->
 		<h1><center>Silverado Cinema's</center></h1>
-		<?php
-			session_start();
-		?>
+	
 	</header>
-	<?php
-			require_once("nav-view.php");
-			echo "${nav}";
-	?>
+	<nav>
+		<ul>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="booking.php">Booking</a></li>
+			<li><a href="about.php">About</a></li>
+			<li><a href="contact.php">Contact</a></li>
+			<li><a href="cart.php">Cart</a></li>
+			<li><a href="checkout.php">Check Out</a></li>
+
+		</ul>
+
+	</nav>
+	
 	
 	<div class = "content">
 		<p>Welcome to the re-opening of Silverado Cinema's with a whole new make over taking your visual and listening experiance to a whole new level. Indcluding features like the all new Dolby Sound System, 3D projection, and comfortbale seats for enhanced viewing perfomance </p>
@@ -54,13 +59,10 @@
 	</div>
 	
 	<footer>
-	  	<?php
-
-			require_once("footer-view.php");
-			echo "${footer}";
-
-	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
-	 	?>
+		<p>This website was created for the use of RMIT assignment 1, Web Programming.</p>
+	 	<p>Dominic Alvaro</p>
+	 	<p>S3542846</p>
+	 	<p>CopyRight 2016</p>
 	</footer>
 
 
