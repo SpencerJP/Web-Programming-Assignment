@@ -8,20 +8,12 @@
 <body>
 	<header>
 		<h1><center>Silverado Cinema's</center></h1>
-	
 	</header>
 
-	<nav>
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="booking.php">Booking</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact</a></li>
-			<li><a href="cart.php">Cart</a></li>
-			<li><a href="checkout.php">Check Out</a></li>
-		</ul>
-
-	</nav>
+	<?php
+			require_once("nav-view.php");
+			echo "${nav}";
+	?>
 
 	<div class = "content">
 		
@@ -54,10 +46,13 @@
 	</div>
 
 	<footer>
-	  	<p>This website was created for the use of RMIT assignment 1, Web Programming.</p>
-	 	<p>Dominic Alvaro</p>
-	 	<p>S3542846</p>
-	 	<p>CopyRight 2016</p>
+	  	<?php
+
+			require_once("footer-view.php");
+			echo "${footer}";
+
+	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
+	 	?>
 	</footer>
 
 </body>

@@ -1,57 +1,54 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Cart</title>
- 	<link rel="stylesheet" href="main.css">
- </head>
- <body>
- 	<header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<header>
 		<h1><center>Silverado Cinema's</center></h1>
-	
+
 	</header>
-	
-	<nav>
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="booking.php">Booking</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact</a></li>
-			<li><a href="cart.php">Cart</a></li>
-			<li><a href="checkout.php">Check Out</a></li>
-		</ul>
 
-	</nav>
+	<?php
+			require_once("nav-view.php");
+			echo "${nav}";
+	?>
 
-	<table style="width:35%">
-		<tr>
-			<th>Cart</th>
-
-		</tr>
-		<tr>
-			<th>Movie:</th>
-			<td>Batman VS Superman</td>
-		</tr>
-		<tr>
-			<th>Session Time:</th>
-			<td>Friday, 9:30pm</td>
-		</tr>
-		<tr>
-			<th rowspan="2">Ticket Type:</th>
-			<td>2 Adult</td>
-			
-		</tr>
-		<tr>
-			<td>2 Conession</td>
-		</tr>
-		<tr>
-			<th>Price:</th>
-			<td>$35.99</td>
-		</tr>
+	<div class = "content">
 		
-	</table>
-	<button type="button" onclick="alert('Will take you to checkout page where details are entered and checkedout')">CHECKOUT</button>
-	
- 	
- </body>
- </html>
+		<form method='post' action='checkout.php' id="cartform">
+
+    		<table>
+    			<tr>
+	    			<td>
+	    				10 CloverField Lane <a href="cart.php?type=remove;name=cloverfield">Remove from Cart</a>
+	    			</td>
+    			</tr>
+    			<tr>
+	    			<td>
+	    				Batman vs Superman <a href="cart.php?type=remove;name=bvs">Remove from Cart</a>
+	    			</td>
+    			</tr>
+    		</table>
+
+
+			<button type="submit" form="cartform" value="Submit">Checkout</button>
+
+		</form>
+		
+	</div>
+
+	<footer>
+	  	<?php
+
+			require_once("footer-view.php");
+			echo "${footer}";
+
+	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
+	 	?>
+	</footer>
+
+</body>
+</html>
