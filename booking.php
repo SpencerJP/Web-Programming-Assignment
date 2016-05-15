@@ -5,26 +5,20 @@
 	<meta charset="UTF-8">
 	<title>Bookings</title>
 	<link rel="stylesheet" href="main.css">
+	<?php
+	require("init.php");
+	?>
 </head>
 <body>
 	<header>
 		<h1><center>Silverado Cinema's</center></h1>
-		<?php
-			require_once("nav-view.php");
-			echo "${nav}";
-		?>
+		
 	</header>
 	
-	<nav>
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="booking.php">Booking</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact</a></li>
-		</ul>
-
-	</nav>
-
+	<?php
+			require_once("nav-view.php");
+			echo "${nav}";
+	?>
 	<div class= "content">
 		<h2>Feel free to browse our current movies that are showing and book online</h2>
 

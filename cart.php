@@ -1,62 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Contact</title>
-	<link rel="stylesheet" href="main.css">
-</head>
-<body>
-	<header>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+ 	<title>Cart</title>
+ 	<link rel="stylesheet" href="main.css">
+ 	<?php
+		require("init.php");
+		/*
+		*
+		*/
+		$_SESSION['cart']['bvs'] = Array("datetime" => "Friday, 9pm", "seats" => Array("B2" => 1), "price" => 30);
+		/*
+		*
+		*/
+	?>
+ </head>
+ <body>
+ 	<header>
 		<h1><center>Silverado Cinema's</center></h1>
-		<?php
+	
+	</header>
+	
+	<?php
 			require_once("nav-view.php");
 			echo "${nav}";
-		?>
-	</header>
+	?>
+	
+	<?php
+	if (array_key_exists('cart', $_SESSION)) {
+		echo "<table style=\"width:35%\">";
+		foreach ($_SESSION['cart'] as $k=>$v) {
+			echo "<tr><th>";
+			$mvename = getMovieName($k);
+			echo "${mvename} <a href=\"cart.php?comm=delete&movie=${k}\">Delete From Cart</a>";
+			echo "<table>";
+			echo "<tr><th>Session Time:</th><td>";
+			echo $v['datetime'];
+			echo "</td></tr>";
+			echo "<tr>";
+			echo "<th rowspan=\"";
+			echo count($v['seats']);
+			echo "\">Ticket Type:</th>";
+			foreach($v['seats'] as $k2=>$v2) {
+				echo "<td>${v2} ";
+				echo str_repeat('&nbsp;', 1);
+				echo getSeatTypeName($k2);
+				echo "</td></tr><tr>";
+			}
+			echo "</tr>";
+			echo "<tr><th>Price: </th>";
+			echo "<tr><td>";
+			echo formatPrice($v['price']);
+			echo "</td></tr>";
+			echo "</table>";
+			echo "</th></tr>";
 
-	<nav>
-		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="booking.php">Booking</a></li>
-			<li><a href="about.php">About</a></li>
-			<li><a href="contact.php">Contact</a></li>
-		</ul>
+		}
 
-	</nav>
+		echo "<button type=\"button\" onclick=\"alert('Will take you to checkout page where details are entered and checked out')\">CHECKOUT</button>";
+	}
+	else {
+		echo "<p>No items in cart! You should make a <a href=\"booking.php\">booking</a>!</p>"; // Dom need you to CSS this, can barely see it
+	}
+	/*
+	<!--
+	<table style="width:35%">
+		<tr>
+			<th>Batman VS Superman               <a href="https://jupiter.csit.rmit.edu.au/~s3539519/wp2/cart.php?comm=delete&movie=bvs">Delete From Cart</a>
+				<table>
+					<tr>
+						<th>Session Time:</th>
+						<td>Friday, 9:30pm</td>
+					</tr>
+					<tr>
+						<th rowspan="2">Ticket Type:</th>
+						<td>2 Adult</td>
+						
+					</tr>
+					<tr>
+						<td>2 Concession</td>
+					</tr>
+					<tr>
+						<th>Price:</th>
+						<td>$35.99</td>
+					</tr>
+				</table>
+			</th>
 
-	<div class = "content">
+		</tr>
 		
-		<form method='post' action='checkout.php' id="cartform">
-
-    		<table>
-    			<tr>
-	    			<td>
-	    				10 CloverField Lane <a href="cart.php?type=remove;name=cloverfield">Remove from Cart</a>
-	    			</td>
-    			</tr>
-    			<tr>
-	    			<td>
-	    				Batman vs Superman <a href="cart.php?type=remove;name=bvs">Remove from Cart</a>
-	    			</td>
-    			</tr>
-    		</table>
-
-
-			<button type="submit" form="cartform" value="Submit">Checkout</button>
-
-		</form>
 		
-	</div>
-
+	</table> -->*/
+	?>
 	<footer>
 	  	<?php
 
 			require_once("footer-view.php");
 			echo "${footer}";
 
-	 		include_once("/home/eh1/e54061/public_html/wp/debug.php")
+	 		include_once("/home/eh1/e54061/public_html/wp/debug.php");
 	 	?>
 	</footer>
-
-</body>
-</html>
+ 	
+ </body>
+ </html>
