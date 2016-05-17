@@ -85,30 +85,34 @@
 		  </tr>
 		</table>
 
-		<form method='post' action='http://titan.csit.rmit.edu.au/~e54061/wp/testbooking.php'>
+		<form method='post' action='booking.php'>
 			<P>Movie</P>
 			<select name="movie">
-		        <option value="batman">Superman VS Batman</option>
-		        <option value="Movie">10 Cloverfield Lane</option>
-		        <option value="Movie">Wedding Crashes</option>
+		        <option value="bvs">Superman VS Batman</option>
+		        <option value="cloverfield">10 Cloverfield Lane</option>
+		        <option value="bfgw">Big Fat Greek Wedding 2</option>
 		    </select>
 		    <br>
 
 		    <P>Day</P>
 			<select name="day">
-		        <option value="Monday">Monday</option>
-		        <option value="Tuesday">Tuesday</option>
-		        <option value="Wednsday">Wednsday</option>
-		        <option value="Thursday">Thursday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Monday")) ."\""  ?> >Monday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Tuesday")) ."\""  ?>>Tuesday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Wednesday")) ."\""  ?>>Wednesday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Thursday")) ."\""  ?>>Thursday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Friday")) ."\""  ?>>Friday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Saturday")) ."\""  ?>>Saturday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Sunday")) ."\""  ?>>Sunday</option>
+		        <option value=<?php echo "\"" . (time() + getSecondsTillDay("Today")) ."\""  ?>>Today</option>
 		    </select>
 		    <br>
 
 		    <P>Booking</P>
 			<select name="time">
-		        <option value="nine">9am</option>
-		        <option value="twelve">12am</option>
-		        <option value="four">4pm</option>
-		        <option value="eight">8pm</option>
+		        <option value="9:00">9am</option>
+		        <option value="12:00">12am</option>
+		        <option value="16:00">4pm</option>
+		        <option value="20:00">8pm</option>
 		    </select>
 		    <br>
 		    <p>Ticket Type</p>
@@ -202,7 +206,7 @@
 		    		<br>
 
 		    		<p>Total: $0.00</p>	
-		    		<input type="submit" value="Submit" name="price">  			
+		    		<input type="submit" value="1" name="makeBooking">  			
 		  		</div>
 			</div>
 

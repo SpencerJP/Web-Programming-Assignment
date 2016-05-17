@@ -9,7 +9,7 @@
 		/*
 		*
 		*/
-		$_SESSION['cart']['bvs'] = Array("datetime" => "Friday, 9pm", "seats" => Array("B2" => 1), "price" => 30);
+		/*$_SESSION['cart']['bvs'] = Array("datetime" => "Friday, 9pm", "seats" => Array("B2" => 1), "price" => 30);*/
 		/*
 		*
 		*/
@@ -25,17 +25,19 @@
 			require_once("nav-view.php");
 			echo "${nav}";
 	?>
-	
+	<div class="content">
 	<?php
 	if (array_key_exists('cart', $_SESSION)) {
-		echo "<table style=\"width:35%\">";
+		echo "<form action=\"cart\" method=\"POST\"><table style=\"width:35%\">";
 		foreach ($_SESSION['cart'] as $k=>$v) {
 			echo "<tr><th>";
 			$mvename = getMovieName($k);
-			echo "${mvename} <a href=\"cart.php?comm=delete&movie=${k}\">Delete From Cart</a>";
+			echo "${mvename} <button type='submit' name='deleteFromCart' value='$k'>Delete From Cart</button>";
 			echo "<table>";
 			echo "<tr><th>Session Time:</th><td>";
-			echo $v['datetime'];
+			echo date("l", (float)$v['date']);
+			echo " ";
+			echo $v['sessiontime'];
 			echo "</td></tr>";
 			echo "<tr>";
 			echo "<th rowspan=\"";
@@ -49,15 +51,15 @@
 			}
 			echo "</tr>";
 			echo "<tr><th>Price: </th>";
-			echo "<tr><td>";
+			echo "<td>";
 			echo formatPrice($v['price']);
-			echo "</td></tr>";
+			echo "</td>";
 			echo "</table>";
 			echo "</th></tr>";
 
 		}
 
-		echo "<button type=\"button\" onclick=\"alert('Will take you to checkout page where details are entered and checked out')\">CHECKOUT</button>";
+		echo "</form><button type=\"button\" onclick=\"alert('Will take you to checkout page where details are entered and checked out')\">CHECKOUT</button>";
 	}
 	else {
 		echo "<p>No items in cart! You should make a <a href=\"booking.php\">booking</a>!</p>"; // Dom need you to CSS this, can barely see it
@@ -92,6 +94,7 @@
 		
 	</table> -->*/
 	?>
+	</div>
 	<footer>
 	  	<?php
 
