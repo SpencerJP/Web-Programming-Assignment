@@ -6,6 +6,13 @@
 	<link rel="stylesheet" href="main.css">
 	<?php
 	require("init.php");
+	/*
+	$bigfatgreek = Array("Friday" => Array("9:00", "12:00", "17:00"), "Sunday" => Array("9:00", "12:00", "17:00") ) ;
+	$cloverfield = Array("Tuesday" => Array("16:00", "20:00"), "Wednesday" => Array("18:00", "21:00"));
+	$bvs = Array("Monday" => Array("18:00", "21:00"), "Thursday" => Array("19:00"), "Saturday" => Array("16:00", "18:00", "20:00") );
+	$movies = Array("GreekWedding" => $bigfatgreek, "Cloverfield" => $cloverfield, "BatmanVSuperman" => $bvs);
+	writeReservations($movies);*/
+
 	?>
 </head>
 <body>
@@ -14,9 +21,6 @@
 		<!-- Original image below sourced for educational purposes: http://www.moustachemagazine.com/wp-content/uploads/2016/03/CLOVERFIELD-LANE.jpg-->
 		<!-- Original image below sourced for educational purposes: http://blogs-images.forbes.com/scottmendelson/files/2016/03/greek.png -->
 		<h1><center>Silverado Cinema's</center></h1>
-		<?php
-			session_start();
-		?>
 	</header>
 	<?php
 			require_once("nav-view.php");

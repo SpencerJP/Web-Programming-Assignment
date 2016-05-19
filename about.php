@@ -4,6 +4,9 @@
 	<meta charset="UTF-8">
 	<title>About</title>
 	<link rel="stylesheet" href="main.css">
+	<?php
+	require("init.php");
+	?>
 </head>
 <body>
 	<header>

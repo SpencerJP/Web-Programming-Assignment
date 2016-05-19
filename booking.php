@@ -5,6 +5,21 @@
 	<meta charset="UTF-8">
 	<title>Bookings</title>
 	<link rel="stylesheet" href="main.css">
+	<?php
+	require("init.php");
+	?>
+	<script>
+			g_timetilldayunix = {
+			Monday: <?php echo (time() + getSecondsTillDay("Monday")); ?>,
+			Tuesday: <?php echo (time() + getSecondsTillDay("Tuesday")); ?>,
+			Wednesday: <?php echo (time() + getSecondsTillDay("Wednesday")); ?>,
+			Thursday: <?php echo (time() + getSecondsTillDay("Thursday")); ?>,
+			Friday: <?php echo (time() + getSecondsTillDay("Friday")); ?>,
+			Saturday: <?php echo (time() + getSecondsTillDay("Saturday")); ?>,
+			Sunday: <?php echo (time() + getSecondsTillDay("Sunday")); ?>,
+			Today: <?php echo (time() + getSecondsTillDay("Today")); ?>
+			} </script>
+	<script src="bookings.js"></script>
 </head>
 <body>
 	<header>
@@ -82,30 +97,25 @@
 		  </tr>
 		</table>
 
-		<form method='post' action='http://titan.csit.rmit.edu.au/~e54061/wp/testbooking.php'>
+		<form method='post' action='booking.php'>
 			<P>Movie</P>
-			<select name="movie">
-		        <option value="batman">Superman VS Batman</option>
-		        <option value="Movie">10 Cloverfield Lane</option>
-		        <option value="Movie">Wedding Crashes</option>
+			<select name="movie" onchange='changeMovieVal(this.value)' id="movie_options">
+		        <option value="bvs">Superman VS Batman</option>
+		        <option value="cloverfield">10 Cloverfield Lane</option>
+		        <option value="bfgw">Big Fat Greek Wedding 2</option>
 		    </select>
 		    <br>
 
 		    <P>Day</P>
-			<select name="day">
-		        <option value="Monday">Monday</option>
-		        <option value="Tuesday">Tuesday</option>
-		        <option value="Wednsday">Wednsday</option>
-		        <option value="Thursday">Thursday</option>
+			<select name="day" onchange='changeDayVal(this.value)' id="movie_days">
+			
+			
+		       
 		    </select>
 		    <br>
 
 		    <P>Booking</P>
-			<select name="time">
-		        <option value="nine">9am</option>
-		        <option value="twelve">12am</option>
-		        <option value="four">4pm</option>
-		        <option value="eight">8pm</option>
+			<select name="time" id="movie_times">
 		    </select>
 		    <br>
 		    <p>Ticket Type</p>
@@ -115,7 +125,7 @@
 		  		<div class="flex-item">
 		  			
 		  			<p>Adult</p>
-					<select name="SA">
+					<select name="SA" id="SA" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -125,7 +135,7 @@
 		    		<br>
 
 		    		<p>Concession</p>
-					<select name="SP">
+					<select name="SP" id="SP" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -135,7 +145,7 @@
 		    		<br>
 
 		    		<p>Child</p>
-					<select name="SC">
+					<select name="SC" id="SC" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -147,7 +157,7 @@
 		  		</div>
 		  		<div class="flex-item">
 		  			<p>First Class Adult</p>
-					<select name="FA">
+					<select name="FA" id="FA" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -157,7 +167,7 @@
 		    		<br>
 
 		    		<p>First Class Child</p>
-					<select name="FC">
+					<select name="FC" id="FC" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -167,7 +177,7 @@
 		    		<br>
 
 		    		<p>Beanbag 1 person</p>
-					<select name="B1">
+					<select name="B1" id="B1" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -179,17 +189,7 @@
 		  		</div>
 		  		<div class="flex-item">
 		  			<p>Beanbag 2 person</p>
-					<select name="B2">
-						<option value="0">0</option>
-				        <option value="1">1</option>s
-				        <option value="2">2</option>
-				        <option value="3">3</option>
-				        <option value="4">4</option>
-		    		</select>
-		    		<br>
-
-		    		<p>Beanbag 3 person</p>
-					<select name="B3">
+					<select name="B2" id="B2" onchange='changePrice()'>
 						<option value="0">0</option>
 				        <option value="1">1</option>
 				        <option value="2">2</option>
@@ -198,8 +198,18 @@
 		    		</select>
 		    		<br>
 
-		    		<p>Total: $0.00</p>	
-		    		<input type="submit" value="Submit" name="price">  			
+		    		<p>Beanbag 3 person</p>
+					<select name="B3" id="B3" onchange='changePrice()'>
+						<option value="0">0</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+				        <option value="4">4</option>
+		    		</select>
+		    		<br>
+
+		    		<p id="currentPrice">Total: $0.00</p>	
+		    		<input type="submit" value="Submit" name="makeBooking">  			
 		  		</div>
 			</div>
 
