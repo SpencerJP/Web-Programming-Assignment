@@ -23,9 +23,9 @@
 	if (array_key_exists('cart', $_SESSION)) {
 		echo "<form action=\"cart\" method=\"POST\"><table style=\"width:35%\">";
 		foreach ($_SESSION['cart'] as $k=>$v) {
-			echo "<tr><th>";
+			//echo "<tr><th>";
 			$mvename = getMovieName($k);
-			echo "${mvename} <button type='submit' name='deleteFromCart' value='$k'>Delete From Cart</button>";
+			echo "<p class=\"moviep\">${mvename}</p> <button type='submit' name='deleteFromCart' value='$k'>Delete From Cart</button>";
 			echo "<table>";
 			echo "<tr><th>Session Time:</th><td>";
 			echo date("l", (float)$v['date']);
@@ -51,41 +51,15 @@
 			echo "</th></tr>";
 
 		}
+		echo "<br>";
 
-		echo "</form><a href=\"checkout.php\">Checkout</a>";
+		echo "</form><a class=\"buttoncheck\" href=\"checkout.php\">Checkout</a>";
+		//echo "<button type='submit' href='\"checkout.php\"'>Checkout</button>";
 	}
 	else {
-		echo "<p>No items in cart! You should make a <a href=\"booking.php\">booking</a>!</p>"; // Dom need you to CSS this, can barely see it
+		echo "<p>No items in cart! You should make a <a class=\"bookingp\" href=\"booking.php\">Booking</a>!</p>"; // a class= not sure if works will have to check off spencers comp
 	}
-	/*
-	<!--
-	<table style="width:35%">
-		<tr>
-			<th>Batman VS Superman               <a href="https://jupiter.csit.rmit.edu.au/~s3539519/wp2/cart.php?comm=delete&movie=bvs">Delete From Cart</a>
-				<table>
-					<tr>
-						<th>Session Time:</th>
-						<td>Friday, 9:30pm</td>
-					</tr>
-					<tr>
-						<th rowspan="2">Ticket Type:</th>
-						<td>2 Adult</td>
-						
-					</tr>
-					<tr>
-						<td>2 Concession</td>
-					</tr>
-					<tr>
-						<th>Price:</th>
-						<td>$35.99</td>
-					</tr>
-				</table>
-			</th>
-
-		</tr>
-		
-		
-	</table> -->*/
+	
 	?>
 	</div>
 	<footer>

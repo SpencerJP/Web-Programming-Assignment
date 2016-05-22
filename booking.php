@@ -208,8 +208,10 @@
 		    		</select>
 		    		<br>
 
-		    		<p id="currentPrice">Total: $0.00</p>	
-		    		<input type="submit" value="Submit" name="makeBooking">  			
+		    		<p id="currentPrice">Total: $0.00</p>
+		    		<a href="cart.php">	
+		    			 <input type="submit" value="Submit" name="makeBooking">
+		    		</a>  			
 		  		</div>
 			</div>
 

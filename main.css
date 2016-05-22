@@ -21,6 +21,11 @@ nav ul{
 
 }
 
+nav ul img{
+    width:30px;
+    height:25px;
+}
+
 
 
 nav li{
@@ -149,6 +154,21 @@ input[type=submit] {
     cursor: pointer;
 }
 
+button[type=submit] {
+    width:10%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 10px;
+    margin: 0px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=submit]:hover {
+    background-color: #45a049;
+}
+
 input[type=submit]:hover {
     background-color: #45a049;
 }
@@ -186,8 +206,33 @@ table, th ,td{
 
 }
 
+table{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 th, td {
     padding: 5px;
     text-align: left;
     color:white;    
+}
+
+.content .moviep{
+    font-size: 25px;
+    color: white;
+}
+
+.content .buttoncheck{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.content .buttoncheck a:hover{
+    color: red;
+}
+
+.content .bookingp{
+    color:white;
 }
